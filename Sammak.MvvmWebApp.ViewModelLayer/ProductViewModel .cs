@@ -109,10 +109,10 @@ namespace Sammak.MvvmWebApp.ViewModelLayer
 
         protected virtual void GetEntity()
         {
-            MvvmData db = null;
+            MvvmDbContext db = null;
             try
             {
-                db = new MvvmData();
+                db = new MvvmDbContext();
                 // Get the entity
                 if (!string.IsNullOrEmpty(EventArgument))
                 {
@@ -128,10 +128,10 @@ namespace Sammak.MvvmWebApp.ViewModelLayer
 
         protected void BuildCollection()
         {
-            MvvmData db = null;
+            MvvmDbContext db = null;
             try
             {
-                db = new MvvmData();
+                db = new MvvmDbContext();
                 // Get the collection
                 DataCollection = db.Products.ToList();
 
@@ -170,10 +170,10 @@ namespace Sammak.MvvmWebApp.ViewModelLayer
 
         protected void Insert()
         {
-            MvvmData db = null;
+            MvvmDbContext db = null;
             try
             {
-                db = new MvvmData();
+                db = new MvvmDbContext();
                 // Do editing here
                 db.Products.Add(Entity);
                 db.SaveChanges();
@@ -193,10 +193,10 @@ namespace Sammak.MvvmWebApp.ViewModelLayer
 
         protected void Update()
         {
-            MvvmData db = null;
+            MvvmDbContext db = null;
             try
             {
-                db = new MvvmData();
+                db = new MvvmDbContext();
                 // Do editing here
                 db.Entry(Entity).State = EntityState.Modified;
                 db.SaveChanges();
@@ -216,10 +216,10 @@ namespace Sammak.MvvmWebApp.ViewModelLayer
 
         public virtual void Delete()
         {
-            MvvmData db = null;
+            MvvmDbContext db = null;
             try
             {
-                db = new MvvmData();
+                db = new MvvmDbContext();
                 if (!string.IsNullOrEmpty(EventArgument))
                 {
                     Entity =

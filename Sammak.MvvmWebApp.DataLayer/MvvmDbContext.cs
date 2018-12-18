@@ -5,9 +5,9 @@ namespace Sammak.MvvmWebApp.DataLayer
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class MvvmData : DbContext
+    public partial class MvvmDbContext : DbContext
     {
-        public MvvmData()
+        public MvvmDbContext()
             : base("name=MvvmData")
         {
         }
